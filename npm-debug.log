@@ -1,0 +1,90 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'socketio', '--save' ]
+2 info using npm@2.7.5
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 warn package.json twitter-js@1.0.0 No description
+6 warn package.json twitter-js@1.0.0 No repository field.
+7 warn package.json twitter-js@1.0.0 No README data
+8 silly cache add args [ 'socketio', null ]
+9 verbose cache add spec socketio
+10 silly cache add parsed spec { raw: 'socketio',
+10 silly cache add   scope: null,
+10 silly cache add   name: 'socketio',
+10 silly cache add   rawSpec: '',
+10 silly cache add   spec: '*',
+10 silly cache add   type: 'range' }
+11 verbose addNamed socketio@*
+12 silly addNamed semver.valid null
+13 silly addNamed semver.validRange *
+14 silly addNameRange { name: 'socketio', range: '*', hasData: false }
+15 silly mapToRegistry name socketio
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/socketio
+19 verbose addNameRange registry:https://registry.npmjs.org/socketio not in flight; fetching
+20 verbose request uri https://registry.npmjs.org/socketio
+21 verbose request no auth needed
+22 info attempt registry request try #1 at 17:34:44
+23 verbose request id 63166bb5587b21f1
+24 http request GET https://registry.npmjs.org/socketio
+25 http 404 https://registry.npmjs.org/socketio
+26 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 verbose headers   etag: '"5RGC7F7X0Z6GAGOGHVGFIPIJR"',
+26 verbose headers   'content-type': 'application/json',
+26 verbose headers   'cache-control': 'max-age=0',
+26 verbose headers   'content-length': '436',
+26 verbose headers   'accept-ranges': 'bytes',
+26 verbose headers   date: 'Wed, 17 Jun 2015 21:34:45 GMT',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   age: '0',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-served-by': 'cache-jfk1028-JFK',
+26 verbose headers   'x-cache': 'MISS',
+26 verbose headers   'x-cache-hits': '0',
+26 verbose headers   'x-timer': 'S1434576885.502666,VS0,VE20',
+26 verbose headers   vary: 'Accept' }
+27 silly get cb [ 404,
+27 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly get     etag: '"5RGC7F7X0Z6GAGOGHVGFIPIJR"',
+27 silly get     'content-type': 'application/json',
+27 silly get     'cache-control': 'max-age=0',
+27 silly get     'content-length': '436',
+27 silly get     'accept-ranges': 'bytes',
+27 silly get     date: 'Wed, 17 Jun 2015 21:34:45 GMT',
+27 silly get     via: '1.1 varnish',
+27 silly get     age: '0',
+27 silly get     connection: 'keep-alive',
+27 silly get     'x-served-by': 'cache-jfk1028-JFK',
+27 silly get     'x-cache': 'MISS',
+27 silly get     'x-cache-hits': '0',
+27 silly get     'x-timer': 'S1434576885.502666,VS0,VE20',
+27 silly get     vary: 'Accept' } ]
+28 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/socketio
+28 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:239:14)
+28 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+28 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:360:22)
+28 verbose stack     at Request.emit (events.js:110:17)
+28 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1202:14)
+28 verbose stack     at Request.emit (events.js:129:20)
+28 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1150:12)
+28 verbose stack     at IncomingMessage.emit (events.js:129:20)
+28 verbose stack     at _stream_readable.js:908:16
+28 verbose stack     at process._tickCallback (node.js:355:11)
+29 verbose statusCode 404
+30 verbose pkgid socketio
+31 verbose cwd /Users/jackmulrow/Google Drive/Programming/Fullstack/Session 1/twitter-js
+32 error Darwin 14.3.0
+33 error argv "node" "/usr/local/bin/npm" "install" "socketio" "--save"
+34 error node v0.12.2
+35 error npm  v2.7.5
+36 error code E404
+37 error 404 Registry returned 404 for GET on https://registry.npmjs.org/socketio
+37 error 404
+37 error 404 'socketio' is not in the npm registry.
+37 error 404 You should bug the author to publish it (or use the name yourself!)
+37 error 404 It was specified as a dependency of 'twitter-js'
+37 error 404
+37 error 404 Note that you can also install from a
+37 error 404 tarball, folder, http url, or git url.
+38 verbose exit [ 1, true ]
