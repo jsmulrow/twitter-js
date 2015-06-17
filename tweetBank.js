@@ -3,14 +3,22 @@ var _ = require('underscore');
 var data = [];
 
 var add = function(name, text) {
-	data.push({name: name, text: text});
+	data.push({name: name, text: text,id : hash(text)});
 };
 
+var hash = function(name){
+	var res=0;
+	for(var i=0;i<name.length;i++){
+		res+=name.charCodeAt(i);
+	}
+	return res;
+}
 var list = function() {
 	return _.clone(data);
 };
 
 var find = function(properties) {
+	// if(id) return _.where(data,{id:id});
 	return _.where(data, properties);
 };
 
@@ -39,4 +47,15 @@ for(var i=0; i<10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
 
+// for(var i=0;i<10;i++){
+// 	console.log(data[i]['id']);
+// }
+
+module.exports.add('Jack','Sweet');
+
+module.exports.add('Thang','Cool');
+
+
+// console.log(data[10]['id']);
+// console.log(data[11]['id']); 
 console.log(data);
