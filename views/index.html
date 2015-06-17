@@ -11,33 +11,32 @@
       <b>Your Name</b><br>
       100 followers
     </div>
-    <div id='tweet-container' class="col-md-9">
+    <div id='tweet-container' class="col-md-9 list-group">
     
       <!-- display tweets here -->
       {% for tweet in tweets %}
 
-        <!-- <li class = "tweetbox">
-          <img src = "http://lorempixel.com/48/48">
-          <p class="content by">{{tweet.name}}</p>
-          <p class = "content">{{tweet.text}}
-          </p>        
+        <li class="tweetbox list-group-item">
+          <img src="http://lorempixel.com/48/48">
+          <p class="content"><a class = "by" href="/users/{{tweet.name}}">{{tweet.name}}</a></p>
+          <p class="content"><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.text}}</a></p>
         </li>
-  -->
- 	    <li><a href="/users/{{tweet.name}}">{{tweet.name}}</a> - <a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.text}}</a></li>
-
+ 
       {% endfor %}
       
     </div>
 
     {% if showForm %}
-      <form action="/submit" method="POST">
-        <label for="name_field">Name:</label>
-        <input name="name" type="text" id="name_field" value="{{name}}"/>
-
-        <label for="text_field">Text:</label>
-        <input name="text" type="text" id="text_field" style="width: 350px;" />
-
-        <input type="submit" value="Submit" />
+      <form class='form-inline' action="/submit" method="POST" style="margin-bottom: 20px">
+        <div class="form-group">
+          <label for="name_field">Name:</label>
+          <input style="width: 200px;"  class="form-control" name="name" type="text" id="name_field" value="{{name}}" placeholder="Your name"/>
+        </div>
+        <div class="form-group">
+          <label for="text_field">Text:</label>
+          <input class="form-control" name="text" type="text" id="text_field" style="width: 350px;" placeholder="Your tweet here"/>
+        </div>
+        <input class="btn btn-default" type="submit" value="Submit"/>
       </form>
     {% endif %}
 

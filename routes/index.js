@@ -38,9 +38,10 @@ module.exports = function(io) {
 	router.post('/submit', urlencodedParser, function(req, res) {
 		var name = req.body.name;
 		var text = req.body.text;
+		if (!text || !name) return;
 		tweetBank.add(name, text);
 		io.sockets.emit('new_tweet', {name: name, text: text, id: hash(text)});
-		res.redirect('/');
+		// res.redirect('/');
 	});
 
 	return router;
