@@ -12,7 +12,8 @@ var hash = function(name){
 		res+=name.charCodeAt(i);
 	}
 	return res;
-}
+};
+
 var list = function() {
 	return _.clone(data);
 };
@@ -47,15 +48,5 @@ for(var i=0; i<10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
 
-// for(var i=0;i<10;i++){
-// 	console.log(data[i]['id']);
-// }
-
 module.exports.add('Jack','Sweet');
-
 module.exports.add('Thang','Cool');
-
-
-// console.log(data[10]['id']);
-// console.log(data[11]['id']); 
-console.log(data);

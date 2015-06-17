@@ -2,9 +2,16 @@ var express = require('express');
 var morgan = require('morgan');
 var swig = require('swig');
 var app = express();
+var socketio = require('socket.io');
+
+var server = app.listen(3000, function(e) {
+	console.log('Server listening');
+});
+
+var io = socketio.listen(server);
 
 var routes = require('./routes/');
-app.use('/', routes);
+app.use('/', routes(io));
 
 app.use(express.static(__dirname + '/public'));
 
@@ -21,7 +28,5 @@ app.get('/', function(req, res) {
 	res.render('index', {title: 'Hall of Fame', people: people} );
 });
 
-app.listen(3000, function(e) {
-	console.log('Server listening');
-});
+
 
